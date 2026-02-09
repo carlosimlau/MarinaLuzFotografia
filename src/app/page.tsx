@@ -54,7 +54,7 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <WhyChooseCard
-              title="8+ anos de experiência"
+              title="10+ anos de experiência"
               icon="camera"
             />
             <WhyChooseCard

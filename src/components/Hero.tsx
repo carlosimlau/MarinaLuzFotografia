@@ -50,7 +50,7 @@ export default function Hero({
         </p>
         <Link
           href={ctaHref}
-          className="inline-block bg-primary-terracota hover:bg-primary-terracota/90 text-white font-medium px-8 py-4 rounded-lg min-h-[44px] transition-all duration-300 hover:shadow-lg"
+          className="inline-block bg-[var(--primary-gold)] hover:brightness-95 text-white font-medium px-8 py-4 rounded-lg min-h-[44px] transition-all duration-300 hover:shadow-lg"
         >
           {ctaText}
         </Link>
