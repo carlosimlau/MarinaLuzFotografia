@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variáveis CSS da identidade visual */
+:root {
+  --primary-beige: #f5f1e8;
+  --primary-sage: #8b9d83;
+  --primary-gold: #c9b687;
+  --primary-terracota: #d4a59a;
+  --off-white: #fafaf9;
+  --dark-gray: #2c2c2c;
+  --light-gray: #f5f5f5;
+}
+
+/* Scroll suave para âncoras */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos base para acessibilidade */
+body {
+  @apply antialiased text-neutral-dark-gray;
+}
+
+/* Focus visível para navegação por teclado */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary-sage;
+}
