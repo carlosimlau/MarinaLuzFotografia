@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button } from "@heroui/button";
 import Hero from "@/components/Hero";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import PhotoGallery from "@/components/PhotoGallery";
@@ -18,8 +19,11 @@ export const metadata = {
   ],
 };
 
-export default function Home() {
+export default async function Home() {
   const miniPortfolio = portfolioImages.slice(0, 6);
+
+  // Simulando delay para demonstrar o skeleton loading
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return (
     <>
@@ -81,12 +85,15 @@ export default function Home() {
             columns="responsive"
           />
           <div className="text-center mt-10">
-            <Link
+            <Button
+              as={Link}
               href="/portfolio"
-              className="inline-block bg-primary-terracota hover:bg-primary-terracota/90 text-white font-medium px-8 py-4 rounded-lg min-h-[44px] transition-all duration-300"
+              className="bg-primary-terracota text-white font-medium px-8 py-6 rounded-lg text-lg"
+              size="lg"
+              radius="sm"
             >
               Ver portfólio completo
-            </Link>
+            </Button>
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import MobileMenu from "./MobileMenu";
+import { Button } from "@heroui/button";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -43,10 +44,11 @@ export default function Header() {
             </nav>
 
             {/* Hamburger - direita, visível só em mobile */}
-            <button
-              type="button"
-              onClick={() => setIsMenuOpen((prev) => !prev)}
-              className="lg:hidden relative w-10 h-10 flex items-center justify-center text-neutral-dark-gray hover:text-primary-sage focus:outline-none focus:ring-2 focus:ring-primary-sage rounded-lg"
+            <Button
+              isIconOnly
+              variant="light"
+              onPress={() => setIsMenuOpen((prev) => !prev)}
+              className="lg:hidden relative w-10 h-10 flex items-center justify-center text-neutral-dark-gray hover:text-primary-sage focus:outline-none focus:ring-2 focus:ring-primary-sage rounded-lg bg-transparent data-[hover=true]:bg-transparent"
               aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={isMenuOpen}
             >
@@ -66,7 +68,7 @@ export default function Header() {
                   isMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-1.5"
                 }`}
               />
-            </button>
+            </Button>
           </div>
         </div>
       </nav>

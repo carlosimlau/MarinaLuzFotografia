@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Check } from "lucide-react";
+import { Button } from "@heroui/button";
 
 export interface ServiceCardProps {
   name: string;
@@ -44,12 +45,13 @@ export default function ServiceCard({
         ))}
       </ul>
 
-      <Link
+      <Button
+        as={Link}
         href="/contato"
         className="flex w-full items-center justify-center bg-primary-terracota hover:bg-primary-terracota/90 text-white font-medium py-3 px-6 rounded-lg min-h-[44px] transition-all duration-300"
       >
         Solicitar orçamento
-      </Link>
+      </Button>
     </article>
   );
 }

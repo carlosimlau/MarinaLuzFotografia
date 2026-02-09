@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { Button } from "@heroui/button";
 
 export interface PortfolioImage {
   id: number;
@@ -49,10 +50,9 @@ export default function PhotoGallery({
       {showFilters && categories.length > 0 && (
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           {categories.map((cat) => (
-            <button
+            <Button
               key={cat.id}
-              type="button"
-              onClick={() => setActiveCategory(cat.id)}
+              onPress={() => setActiveCategory(cat.id)}
               className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 min-h-[44px] ${
                 activeCategory === cat.id
                   ? "bg-primary-sage text-white"
@@ -60,7 +60,7 @@ export default function PhotoGallery({
               }`}
             >
               {cat.name}
-            </button>
+            </Button>
           ))}
         </div>
       )}

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@heroui/button";
 
 interface HeroProps {
   title?: string;
@@ -48,12 +49,13 @@ export default function Hero({
         <p className="text-lg md:text-xl text-primary-beige/95 mb-8 md:mb-12 max-w-2xl mx-auto">
           {subtitle}
         </p>
-        <Link
+        <Button
+          as={Link}
           href={ctaHref}
-          className="inline-block bg-[var(--primary-gold)] hover:brightness-95 text-white font-medium px-8 py-4 rounded-lg min-h-[44px] transition-all duration-300 hover:shadow-lg"
+          className="bg-[var(--primary-gold)] hover:brightness-95 text-white font-medium px-8 py-4 rounded-lg min-h-[44px] transition-all duration-300 hover:shadow-lg"
         >
           {ctaText}
-        </Link>
+        </Button>
       </div>
     </section>
   );

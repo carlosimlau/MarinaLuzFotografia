@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { Button } from "@heroui/button";
 
 const contactSchema = z.object({
   name: z.string().min(3, "Nome deve ter pelo menos 3 caracteres"),
@@ -184,13 +185,13 @@ export default function ContactForm() {
         />
       </div>
 
-      <button
+      <Button
         type="submit"
-        disabled={isSubmitting}
+        isLoading={isSubmitting}
         className="w-full bg-primary-terracota hover:bg-primary-terracota/90 disabled:opacity-70 disabled:cursor-not-allowed text-white font-medium py-3 px-6 rounded-lg min-h-[44px] transition-all duration-300"
       >
         {isSubmitting ? "Enviando..." : "Enviar mensagem"}
-      </button>
+      </Button>
     </form>
   );
 }

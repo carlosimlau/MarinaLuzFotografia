@@ -1,11 +1,13 @@
 "use client";
 
-import { Camera, Heart, MapPin } from "lucide-react";
+import { Card, CardFooter } from "@heroui/card";
+import { Image } from "@heroui/image";
+import { Button } from "@heroui/button";
 
 const icons = {
-  camera: Camera,
-  heart: Heart,
-  map: MapPin,
+  camera: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop",
+  heart: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=800&auto=format&fit=crop",
+  map: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop",
 };
 
 interface WhyChooseCardProps {
@@ -19,18 +21,22 @@ export default function WhyChooseCard({
   description,
   icon,
 }: WhyChooseCardProps) {
-  const Icon = icons[icon];
+  const imageSrc = icons[icon];
+  
   return (
-    <article className="bg-white rounded-lg shadow-md p-6 md:p-8 border border-primary-beige text-center hover:shadow-lg transition-all duration-300">
-      <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-primary-sage/10 text-primary-sage">
-        <Icon className="w-7 h-7" aria-hidden />
-      </div>
-      <h3 className="font-playfair text-xl md:text-2xl font-semibold text-neutral-dark-gray mb-2">
-        {title}
-      </h3>
-      {description && (
-        <p className="text-neutral-dark-gray/80">{description}</p>
-      )}
-    </article>
+    <Card isFooterBlurred className="w-full h-[300px] border-none" radius="lg">
+      <Image
+        removeWrapper
+        alt={title}
+        className="z-0 w-full h-full object-cover"
+        src={imageSrc}
+      />
+      <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
+        <div>
+          <p className="text-white font-medium text-lg drop-shadow-md">{title}</p>
+          {description && <p className="text-white/80 text-tiny drop-shadow-md">{description}</p>}
+        </div>
+      </CardFooter>
+    </Card>
   );
 }
