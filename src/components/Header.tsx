@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import MobileMenu from "./MobileMenu";
 import { Button } from "@heroui/button";
 
@@ -15,6 +16,7 @@ const navLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -32,15 +34,22 @@ export default function Header() {
 
             {/* Desktop Navigation - visible lg+ */}
             <nav className="hidden lg:flex items-center gap-8" aria-label="Navegação principal">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-neutral-dark-gray hover:text-primary-sage transition-colors font-medium"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`transition-colors font-medium border-b-2 pb-1 ${
+                      isActive
+                        ? "text-primary-sage border-primary-sage"
+                        : "text-neutral-dark-gray hover:text-primary-sage border-transparent"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Hamburger - direita, visível só em mobile */}

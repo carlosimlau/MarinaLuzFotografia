@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import FadeInSection from "@/components/FadeInSection";
 
 export const metadata = {
   title: "Sobre mim",
@@ -54,24 +55,26 @@ export default function SobrePage() {
       </section>
 
       {/* Texto principal */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-4 md:px-8 lg:px-16 space-y-6 text-lg text-neutral-dark-gray/90">
-          <p>
-            Acredito que cada casal tem uma narrativa única, e meu trabalho é
-            capturar a essência do amor de vocês de forma natural e atemporal.
-          </p>
-          <p>
-            Minha abordagem combina momentos espontâneos com composições
-            cuidadosas, criando um acervo de memórias que vocês vão guardar para
-            sempre. Trabalho com luz natural sempre que possível e valorizo as
-            emoções genuínas acima de poses artificiais.
-          </p>
-          <p>
-            Baseada em São Paulo, atendo casamentos em toda a região
-            metropolitana e destinos especiais.
-          </p>
-        </div>
-      </section>
+      <FadeInSection>
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-3xl mx-auto px-4 md:px-8 lg:px-16 space-y-6 text-lg text-neutral-dark-gray/90">
+            <p>
+              Acredito que cada casal tem uma narrativa única, e meu trabalho é
+              capturar a essência do amor de vocês de forma natural e atemporal.
+            </p>
+            <p>
+              Minha abordagem combina momentos espontâneos com composições
+              cuidadosas, criando um acervo de memórias que vocês vão guardar para
+              sempre. Trabalho com luz natural sempre que possível e valorizo as
+              emoções genuínas acima de poses artificiais.
+            </p>
+            <p>
+              Baseada em São Paulo, atendo casamentos em toda a região
+              metropolitana e destinos especiais.
+            </p>
+          </div>
+        </section>
+      </FadeInSection>
 
       {/* Citação */}
       <section className="py-16 md:py-24 bg-primary-beige/30">
@@ -88,53 +91,57 @@ export default function SobrePage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-4 md:px-8 lg:px-16">
-          <h2 className="font-playfair text-2xl md:text-3xl font-semibold text-neutral-dark-gray mb-12 text-center">
-            Minha trajetória
-          </h2>
-          <ul className="space-y-8">
-            {timeline.map((item) => (
-              <li key={item.year} className="flex gap-6">
-                <span className="font-semibold text-primary-sage w-20 flex-shrink-0">
-                  {item.year}
-                </span>
-                <div>
-                  <h3 className="font-semibold text-neutral-dark-gray mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-neutral-dark-gray/80">{item.desc}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <FadeInSection>
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-3xl mx-auto px-4 md:px-8 lg:px-16">
+            <h2 className="font-playfair text-2xl md:text-3xl font-semibold text-neutral-dark-gray mb-12 text-center">
+              Minha trajetória
+            </h2>
+            <ul className="space-y-8">
+              {timeline.map((item) => (
+                <li key={item.year} className="flex gap-6">
+                  <span className="font-semibold text-primary-sage w-20 flex-shrink-0">
+                    {item.year}
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-neutral-dark-gray mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-neutral-dark-gray/80">{item.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </FadeInSection>
 
       {/* Galeria bastidores */}
-      <section className="py-16 md:py-24 bg-primary-beige/50">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-          <h2 className="font-playfair text-2xl md:text-3xl font-semibold text-neutral-dark-gray mb-12 text-center">
-            Bastidores
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {BEHIND_THE_SCENES.map((url, i) => (
-              <div
-                key={i}
-                className="relative aspect-[4/3] rounded-lg overflow-hidden"
-              >
-                <Image
-                  src={url}
-                  alt={`Bastidores do trabalho - foto ${i + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
-              </div>
-            ))}
+      <FadeInSection>
+        <section className="py-16 md:py-24 bg-primary-beige/50">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+            <h2 className="font-playfair text-2xl md:text-3xl font-semibold text-neutral-dark-gray mb-12 text-center">
+              Bastidores
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {BEHIND_THE_SCENES.map((url, i) => (
+                <div
+                  key={i}
+                  className="relative aspect-[4/3] rounded-lg overflow-hidden"
+                >
+                  <Image
+                    src={url}
+                    alt={`Bastidores do trabalho - foto ${i + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </FadeInSection>
 
       {/* CTA */}
       <section className="py-16 md:py-24 bg-primary-sage">

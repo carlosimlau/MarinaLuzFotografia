@@ -113,16 +113,6 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
                   <Instagram className="w-5 h-5" />
                   <span className="text-sm font-medium">Instagram</span>
                 </a>
-                <span className="text-primary-sage/30">|</span>
-                <a
-                  href="https://wa.me/5511987654321"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium text-primary-sage hover:underline"
-                  aria-label="WhatsApp"
-                >
-                  WhatsApp
-                </a>
               </motion.div>
             </div>
           </motion.div>

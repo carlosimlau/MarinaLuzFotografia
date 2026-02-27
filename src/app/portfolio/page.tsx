@@ -1,4 +1,5 @@
 import PhotoGallery from "@/components/PhotoGallery";
+import FadeInSection from "@/components/FadeInSection";
 import { portfolioImages, categories } from "@/data/portfolio";
 
 export const metadata = {

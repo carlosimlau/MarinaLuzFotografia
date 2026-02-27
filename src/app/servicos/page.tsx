@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ServiceCard from "@/components/ServiceCard";
+import FadeInSection from "@/components/FadeInSection";
 import { services, additionalServices } from "@/data/services";
 
 export const metadata = {
@@ -23,47 +24,49 @@ export default function ServicosPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {services.map((service) => (
-              <ServiceCard key={service.id} {...service} />
-            ))}
-          </div>
+      <FadeInSection>
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              {services.map((service) => (
+                <ServiceCard key={service.id} {...service} />
+              ))}
+            </div>
 
-          <h2 className="font-playfair text-2xl md:text-3xl font-semibold text-neutral-dark-gray text-center mb-8">
-            Serviços avulsos
-          </h2>
-          <div className="max-w-2xl mx-auto space-y-4">
-            {additionalServices.map((svc) => (
-              <div
-                key={svc.id}
-                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-6 bg-primary-beige/30 rounded-lg border border-primary-beige"
-              >
-                <div>
-                  <h3 className="font-semibold text-neutral-dark-gray">
-                    {svc.name}
-                  </h3>
-                  <p className="text-sm text-neutral-dark-gray/70">
-                    {svc.description}
-                  </p>
+            <h2 className="font-playfair text-2xl md:text-3xl font-semibold text-neutral-dark-gray text-center mb-8">
+              Serviços avulsos
+            </h2>
+            <div className="max-w-2xl mx-auto space-y-4">
+              {additionalServices.map((svc) => (
+                <div
+                  key={svc.id}
+                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-6 bg-primary-beige/30 rounded-lg border border-primary-beige"
+                >
+                  <div>
+                    <h3 className="font-semibold text-neutral-dark-gray">
+                      {svc.name}
+                    </h3>
+                    <p className="text-sm text-neutral-dark-gray/70">
+                      {svc.description}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 flex-shrink-0">
+                    <span className="font-bold text-primary-sage">
+                      R$ {svc.price}
+                    </span>
+                    <Link
+                      href="/contato"
+                      className="text-primary-sage font-medium hover:underline"
+                    >
+                      Solicitar
+                    </Link>
+                  </div>
                 </div>
-                <div className="flex items-center gap-4 flex-shrink-0">
-                  <span className="font-bold text-primary-sage">
-                    R$ {svc.price}
-                  </span>
-                  <Link
-                    href="/contato"
-                    className="text-primary-sage font-medium hover:underline"
-                  >
-                    Solicitar
-                  </Link>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </FadeInSection>
 
       <section className="py-16 md:py-24 bg-primary-sage">
         <div className="max-w-3xl mx-auto px-4 md:px-8 text-center text-white">

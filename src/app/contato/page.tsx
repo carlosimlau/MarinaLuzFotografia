@@ -10,15 +10,9 @@ export const metadata = {
 const contactInfo = [
   {
     icon: "mail" as const,
-    label: "Email",
+    label: "Email (fictício)",
     value: "contato@marinaluzfoto.com.br",
-    href: "mailto:contato@marinaluzfoto.com.br",
-  },
-  {
-    icon: "phone" as const,
-    label: "WhatsApp",
-    value: "(11) 98765-4321",
-    href: "https://wa.me/5511987654321",
+    href: null,
   },
   {
     icon: "instagram" as const,

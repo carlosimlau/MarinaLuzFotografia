@@ -53,7 +53,7 @@ export const portfolioImages = [
   {
     id: 9,
     category: "festa",
-    url: "https://images.unsplash.com/photo-1478146059743-1f0b70d08e67?w=800&q=80",
+    url: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80",
     alt: "Primeira dança dos noivos",
   },
   {
@@ -114,7 +114,7 @@ export const portfolioImages = [
   {
     id: 19,
     category: "pre-wedding",
-    url: "https://images.unsplash.com/photo-1522086098528-16d8d3d927c2?w=800&q=80",
+    url: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80",
     alt: "Ensaio ao ar livre",
   },
   {
@@ -163,13 +163,13 @@ export const portfolioImages = [
   {
     id: 27,
     category: "detalhes",
-    url: "https://images.unsplash.com/photo-1535370786987-d03ba1425dae?w=800&q=80",
+    url: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=800&q=80",
     alt: "Detalhes do vestido",
   },
   {
     id: 28,
     category: "detalhes",
-    url: "https://images.unsplash.com/photo-1525258974676-14a1b611e4c6?w=800&q=80",
+    url: "https://images.unsplash.com/photo-1501183007986-d0d080b147f9?w=800&q=80",
     alt: "Sapatos da noiva",
   },
   {

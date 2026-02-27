@@ -46,14 +46,6 @@ export default function Footer() {
             >
               <Instagram className="w-6 h-6" />
             </a>
-            <a
-              href="https://wa.me/5511987654321"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm hover:text-primary-gold transition-colors"
-            >
-              WhatsApp
-            </a>
           </div>
         </div>
 

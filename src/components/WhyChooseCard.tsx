@@ -2,7 +2,6 @@
 
 import { Card, CardFooter } from "@heroui/card";
 import { Image } from "@heroui/image";
-import { Button } from "@heroui/button";
 
 const icons = {
   camera: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop",
